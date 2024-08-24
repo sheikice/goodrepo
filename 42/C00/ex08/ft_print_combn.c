@@ -52,19 +52,20 @@ void	ft_print_combn(int n)
 	print_tab(tab, n);
 	while (tab[0] < 10 - n)
 	{
-		if(tab[0] < 10 - n)
-			write(1, ", ", 2);
+		write(1, ", ", 2);
 		ft_inc_tab(tab,  n - 1, n);
 		print_tab(tab, n);
 	}
 	free(tab);	
 }
 
-#include <stdlib.h>
 int	main(int argc, char *argv[])
 {
-	if (argc != 2)
+	if (argc != 2 || atoi(argv[1]) < 1 || atoi(argv[1]) > 9)
+	{	
+		write(1, "Not a good parameter\n", 21);
 		return (0);
+	}
 	ft_print_combn(atoi(argv[1]));
 	write (1, "\n", 1);
 	return (0);
