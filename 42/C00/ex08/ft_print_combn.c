@@ -56,6 +56,7 @@ void	ft_print_combn(int n)
 		ft_inc_tab(tab,  n - 1, n);
 		print_tab(tab, n);
 	}
+	write(1, "\n", 1);
 	free(tab);	
 }
 
@@ -67,6 +68,5 @@ int	main(int argc, char *argv[])
 		return (0);
 	}
 	ft_print_combn(atoi(argv[1]));
-	write (1, "\n", 1);
 	return (0);
 }
