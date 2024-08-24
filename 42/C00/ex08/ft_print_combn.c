@@ -1,13 +1,11 @@
 #include <unistd.h>
 #include <stdlib.h>
 
-void	ft_putnbr(int i)
+void	ft_putfigure(int i)
 {
 	char	mod;
 
-	mod = (i % 10) + 48;	
-	if (i > 9)
-		ft_putnbr(i / 10);
+	mod = i + 48;	
 	write (1, &mod, 1);
 }
 
@@ -18,7 +16,7 @@ void	print_tab(int *tab, int n)
 	i = 0;
 	while (i < n)
 	{
-		ft_putnbr(tab[i]);
+		ft_putfigure(tab[i]);
 		i++;
 	}
 }
