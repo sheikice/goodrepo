@@ -1,6 +1,6 @@
 #include <unistd.h>
 #include <stdio.h>
-
+	
 void	write_hexa(char c)
 {
 	int	i;
