@@ -39,19 +39,21 @@ void	ft_putnbr_base(int nbr, char *base)
 {
 	int	nb_base;
 	int	mod;
+	long	num;
 
+	num = nbr;
 	nb_base = ft_strlen(base);
 	if(nb_base < 2 || !base || !ft_check_base(base, nb_base))
 		return;
-	if(nbr < 0)
+	if(num < 0)
 	{
 		write(1, "-", 1);
-		nbr *= -1; 
+		num *= -1; 
 	}
-		mod = nbr % nb_base;
-	if (nbr >= nb_base)
+		mod = num % nb_base;
+	if (num >= nb_base)
 	{
-		ft_putnbr_base(nbr/nb_base, base);
+		ft_putnbr_base(num/nb_base, base);
 	}
 		write(1, &base[mod], 1);
 }
